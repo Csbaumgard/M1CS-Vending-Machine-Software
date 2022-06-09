@@ -9,6 +9,10 @@ public class InventoryStock {
     private String slot;
     private double price;
     private String type;
+    private String[] nameArray;
+    private String[] slotArray;
+    private Double[] priceArray;
+    private String[] typeArray;
 
 
     public InventoryStock(String name, String slot, double price, String type) {
@@ -16,6 +20,10 @@ public class InventoryStock {
         this.slot = slot;
         this.price = price;
         this.type = type;
+    }
+
+    public InventoryStock() {
+
     }
 
     public String getName() {
@@ -55,7 +63,8 @@ public class InventoryStock {
             Scanner fileScanner = new Scanner(csv);
             while (fileScanner.hasNextLine()) {
                 String line = fileScanner.nextLine();
-                
+                String[] itemArray = line.split("\n");
+                System.out.println(Arrays.toString(itemArray));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
