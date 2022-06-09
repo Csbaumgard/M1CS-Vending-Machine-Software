@@ -4,13 +4,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class InventoryStock {
+public class InventoryStock implements restock {
     private String name;
     private String slot;
     private double price;
     private String type;
-    private int stock;
+    private int stock = 5;
+    List<InventoryStock> stockList = new ArrayList<>();
 
+    public InventoryStock() {
+    }
 
     public InventoryStock(String name, String slot, double price, String type, int stock) {
         this.name = name;
@@ -20,8 +23,12 @@ public class InventoryStock {
         this.stock = stock;
     }
 
-    public InventoryStock() {
+    public String getAll() {
+        return getSlot() + ", " + getName() + " $" + getPrice() + " " + getType() + " " +getStock();
+    }
 
+    public int getStock() {
+        return stock;
     }
 
     public String getName() {
@@ -56,4 +63,26 @@ public class InventoryStock {
         this.type = type;
     }
 
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+    public void restock() {
+        File csv = new File("vendingmachine.csv");
+        try (Scanner fileScanner = new Scanner(csv)) {
+            while (fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine();
+                String[] lineArray = line.split("\\|");
+                slot = lineArray[0];
+                name = lineArray[1];
+                price = Integer.parseInt(lineArray[2]);
+                type = lineArray[3];
+                stock = 5;
+                stockList.add(new InventoryStock(slot, name, price, type, stock));
+                }
+            System.out.println(stockList);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
