@@ -9,17 +9,15 @@ public class InventoryStock {
     private String slot;
     private double price;
     private String type;
-    private String[] nameArray;
-    private String[] slotArray;
-    private Double[] priceArray;
-    private String[] typeArray;
+    private int stock;
 
 
-    public InventoryStock(String name, String slot, double price, String type) {
+    public InventoryStock(String name, String slot, double price, String type, int stock) {
         this.name = name;
         this.slot = slot;
         this.price = price;
         this.type = type;
+        this.stock = stock;
     }
 
     public InventoryStock() {
@@ -57,17 +55,5 @@ public class InventoryStock {
     public void setType(String type) {
         this.type = type;
     }
-    public void populateInventory() {
-        File csv = new File("vendingmachine.csv");
-        try {
-            Scanner fileScanner = new Scanner(csv);
-            while (fileScanner.hasNextLine()) {
-                String line = fileScanner.nextLine();
-                String[] itemArray = line.split("\n");
-                System.out.println(Arrays.toString(itemArray));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+
 }

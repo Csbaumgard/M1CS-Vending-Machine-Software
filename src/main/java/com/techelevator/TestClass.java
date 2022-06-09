@@ -1,12 +1,10 @@
 package com.techelevator;
 
 public class TestClass extends InventoryStock {
-    public TestClass(String name, String slot, double price, String type) {
-        super(name, slot, price, type);
-    }
+
 
     public static void main(String[] args) {
-        InventoryStock stock = new InventoryStock();
-        stock.populateInventory();
+        InventoryStock Potato_Crisps = new InventoryStock("Potato Crisps", "A1", 3.05, "Chip", 5);
+        System.out.println(Potato_Crisps.getPrice());
     }
 }
