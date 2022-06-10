@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class InventoryStock implements restock {
+public class InventoryStock implements Stock {
     private String name;
     private String slot;
-    private double price;
+    private String price;
     private String type;
     private int stock = 5;
     List<InventoryStock> stockList = new ArrayList<>();
@@ -15,7 +15,7 @@ public class InventoryStock implements restock {
     public InventoryStock() {
     }
 
-    public InventoryStock(String name, String slot, double price, String type, int stock) {
+    public InventoryStock(String name, String slot, String price, String type, int stock) {
         this.name = name;
         this.slot = slot;
         this.price = price;
@@ -47,11 +47,11 @@ public class InventoryStock implements restock {
         this.slot = slot;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -74,7 +74,7 @@ public class InventoryStock implements restock {
                 String[] lineArray = line.split("\\|");
                 slot = lineArray[0];
                 name = lineArray[1];
-                price = Integer.parseInt(lineArray[2]);
+                price = (lineArray[2]);
                 type = lineArray[3];
                 stock = 5;
                 stockList.add(new InventoryStock(slot, name, price, type, stock));

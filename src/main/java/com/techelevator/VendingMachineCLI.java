@@ -2,7 +2,7 @@ package com.techelevator;
 
 import com.techelevator.view.Menu;
 
-public class VendingMachineCLI implements restock {
+public class VendingMachineCLI implements Stock {
 
 	private static final String MAIN_MENU_OPTION_DISPLAY_ITEMS = "Display Vending Machine Items";
 	private static final String MAIN_MENU_OPTION_PURCHASE = "Purchase";
@@ -21,7 +21,7 @@ public class VendingMachineCLI implements restock {
 
 			switch (choice) {
 				case MAIN_MENU_OPTION_DISPLAY_ITEMS:
-					restock();
+					;
 				case MAIN_MENU_OPTION_PURCHASE:
 					break;
 				case MAIN_MENU_OPTION_EXIT:
