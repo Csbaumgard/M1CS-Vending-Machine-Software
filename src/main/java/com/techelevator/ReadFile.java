@@ -36,6 +36,6 @@ public class ReadFile {
 
     // public createMapOfItemAndCode()
     // for loop
-        // if index of item type = ("Chips")
+        // if lineListArray[2] index of item type = ("Chips")
                 // Chips chip = new Chip()
 }
