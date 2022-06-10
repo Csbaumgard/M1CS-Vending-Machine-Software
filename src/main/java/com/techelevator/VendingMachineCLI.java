@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import com.techelevator.view.Menu;
+import com.techelevator.Money;
 
 
 import java.io.File;
@@ -24,31 +25,12 @@ public class VendingMachineCLI {
 	private static final String[] PURCHASE_MENU_OPTIONS = { PURCHASE_MENU_OPTION_FEED_MONEY, PURCHASE_MENU_OPTION_SELECT_PRODUCT, PURCHASE_MENU_OPTION_FINISH_TRANSACTION };
 
 	private final Menu menu;
-	private final PurchaseMenu purchaseMenu;
+	Scanner userInput = new Scanner(System.in);
+	File inputFile = new File("vendingmachine.csv");
+	Stock purchaseMenu = new Stock(inputFile);
 
-	public VendingMachineCLI(Menu menu, PurchaseMenu purchaseMenu) {
+	public VendingMachineCLI(Menu menu) {
 		this.menu = menu;
-		this.purchaseMenu = purchaseMenu;
-	}
-
-
-	public void allStock() {
-		List<Items> stockList = new ArrayList<>();
-		File csv = new File("vendingmachine.csv");
-		try (Scanner fileScanner = new Scanner(csv)) {
-			while (fileScanner.hasNextLine()) {
-				String line = fileScanner.nextLine();
-				String[] lineArray = line.split("\\|");
-				stockList.add(new Items(lineArray[1], lineArray[0], lineArray[2], lineArray[3], 5));
-			}
-			for (int i = 0; i < stockList.size(); i++) {
-				System.out.println(stockList.get(i).getAll());
-			}
-
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
 	}
 
 	public void run() {
@@ -57,7 +39,9 @@ public class VendingMachineCLI {
 
 			switch (choice) {
 				case MAIN_MENU_OPTION_DISPLAY_ITEMS:
-					allStock();
+					for (String s : purchaseMenu.displayStock()) {
+						System.out.println(s);
+					}
 					break;
 				case MAIN_MENU_OPTION_PURCHASE:
 					runPurchase();
@@ -73,8 +57,10 @@ public class VendingMachineCLI {
 			String choice = (String) menu.getChoiceFromOptions(PURCHASE_MENU_OPTIONS);
 
 			switch (choice) {
-				case PURCHASE_MENU_OPTION_FEED_MONEY: //
-
+				case PURCHASE_MENU_OPTION_FEED_MONEY:
+					Money balance = new Money();
+					balance.addMoney();
+					System.out.println(balance.getBalance());
 				case PURCHASE_MENU_OPTION_SELECT_PRODUCT:
 					break;
 				case PURCHASE_MENU_OPTION_FINISH_TRANSACTION:
