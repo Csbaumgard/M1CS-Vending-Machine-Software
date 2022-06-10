@@ -18,9 +18,9 @@ public class VendingMachineCLI {
 
 	// Purchase Menu Variables
 
-	private static final String PURCHASE_MENU_OPTION_FEED_MONEY= "Display Vending Machine Items";
-	private static final String PURCHASE_MENU_OPTION_SELECT_PRODUCT = "Purchase";
-	private static final String PURCHASE_MENU_OPTION_FINISH_TRANSACTION = "Exit";
+	private static final String PURCHASE_MENU_OPTION_FEED_MONEY= "Feed Money";
+	private static final String PURCHASE_MENU_OPTION_SELECT_PRODUCT = "Select Product";
+	private static final String PURCHASE_MENU_OPTION_FINISH_TRANSACTION = "Finish Transaction";
 	private static final String[] PURCHASE_MENU_OPTIONS = { PURCHASE_MENU_OPTION_FEED_MONEY, PURCHASE_MENU_OPTION_SELECT_PRODUCT, PURCHASE_MENU_OPTION_FINISH_TRANSACTION };
 
 	private final Menu menu;
@@ -58,10 +58,26 @@ public class VendingMachineCLI {
 			switch (choice) {
 				case MAIN_MENU_OPTION_DISPLAY_ITEMS:
 					allStock();
+					break;
 				case MAIN_MENU_OPTION_PURCHASE:
-
+					runPurchase();
 					break;
 				case MAIN_MENU_OPTION_EXIT:
+					System.exit(0);
+			}
+		}
+	}
+
+	public void runPurchase() {
+		while (true) {
+			String choice = (String) menu.getChoiceFromOptions(PURCHASE_MENU_OPTIONS);
+
+			switch (choice) {
+				case PURCHASE_MENU_OPTION_FEED_MONEY: //
+
+				case PURCHASE_MENU_OPTION_SELECT_PRODUCT:
+					break;
+				case PURCHASE_MENU_OPTION_FINISH_TRANSACTION:
 					System.exit(0);
 			}
 		}
