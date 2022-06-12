@@ -1,0 +1,6 @@
+
+try (SCanner fileInput = new Scanner("vendingmachine.csv)) {
+
+    while(fileInput.hasnextLien
+
+}

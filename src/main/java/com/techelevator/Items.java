@@ -7,17 +7,16 @@ import java.util.*;
 public class Items {
     private String name;
     private String slot;
-    private int price;
+    private double price;
     private int stock;
 
-    public Items() {
-    }
 
-    public Items(String name, String slot, int price) {
+
+    public Items(String slot, String name, double price, int stock) {
         this.name = name;
         this.slot = slot;
         this.price = price;
-        stock = 5;
+        this.stock = stock;
 
 
     }
@@ -47,7 +46,7 @@ public class Items {
         this.slot = slot;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -58,5 +57,11 @@ public class Items {
     public void setStock(int stock) {
         this.stock = stock;
     }
+//    public String getItemFromUserChoice (String userChoice) {
+//        return  getSlot();
+//    }
 
 }
+
+
+

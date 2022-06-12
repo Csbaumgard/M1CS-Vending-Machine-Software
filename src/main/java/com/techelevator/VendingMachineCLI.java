@@ -27,21 +27,21 @@ public class VendingMachineCLI {
 	private final Menu menu;
 	Scanner userInput = new Scanner(System.in);
 	File inputFile = new File("vendingmachine.csv");
-	Stock purchaseMenu = new Stock(inputFile);
+	FileReader fileReader = new FileReader();
+
 
 	public VendingMachineCLI(Menu menu) {
 		this.menu = menu;
 	}
 
 	public void run() {
+		fileReader.fileReader();
 		while (true) {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
 			switch (choice) {
 				case MAIN_MENU_OPTION_DISPLAY_ITEMS:
-					for (String s : purchaseMenu.displayStock()) {
-						System.out.println(s);
-					}
+				fileReader.displayVendingItems();
 					break;
 				case MAIN_MENU_OPTION_PURCHASE:
 					runPurchase();
@@ -61,11 +61,17 @@ public class VendingMachineCLI {
 					Money balance = new Money();
 					balance.addMoney();
 					System.out.println(balance.getBalance());
+					break;
 				case PURCHASE_MENU_OPTION_SELECT_PRODUCT:
+//					purchaseMenu.purchaseMenuSelectProduct(); run fileReader.displayVendingItems() again to  display,
+//                    new FileReader(inputFile);
+
 					break;
 				case PURCHASE_MENU_OPTION_FINISH_TRANSACTION:
 					System.exit(0);
 			}
 		}
 	}
+
+
 }
