@@ -61,6 +61,7 @@ public class FileReader {
                 vendingItems.setStock(vendingItems.getStock() - 1);
                 System.out.println("There are " + vendingItems.getStock() + " " + vendingItems.getName() + " left.");
                 System.out.println(vendingItems.getSound());
+                break;
             } else if (vendingItems.getStock() == 0) {
                 System.out.println("This item is out of stock.");
             }

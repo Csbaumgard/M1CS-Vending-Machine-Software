@@ -29,7 +29,7 @@ public class VendingMachineCLI {
 	Scanner userInput = new Scanner(System.in);
 	File inputFile = new File("vendingmachine.csv");
 	FileReader fileReader = new FileReader();
-	private double currentBalance;
+	public double currentBalance;
 	DecimalFormat df = new DecimalFormat("###.00");
 	Money balance = new Money();
 
@@ -62,16 +62,19 @@ public class VendingMachineCLI {
 
 			switch (choice) {
 				case PURCHASE_MENU_OPTION_FEED_MONEY:
+					System.out.println("Current Balance: $" + df.format(currentBalance));
+					balance.balanceClear();
 					System.out.println("Please insert valid bills (1's, 2's, 5's, 10's) ");
 					int nextBill = Integer.parseInt(userInput.nextLine());
 					balance.addMoney(nextBill);
-					currentBalance = balance.getBalance();
+					currentBalance += balance.getBalance();
 					System.out.println("Current Balance: $" + df.format(currentBalance));
 					break;
 				case PURCHASE_MENU_OPTION_SELECT_PRODUCT:
 					fileReader.displayVendingItems(); //run fileReader.displayVendingItems() again to  display,
+					System.out.println("Current Balance: $" + df.format(currentBalance));
 					System.out.println("Please enter item code for selection (Example: A1) ");
-					String slot = userInput.nextLine();
+					String slot = userInput.nextLine().toUpperCase();
 
 					if (currentBalance - fileReader.userProductPrice(slot) >= 0) {
 						fileReader.userSelectProduct(slot);
