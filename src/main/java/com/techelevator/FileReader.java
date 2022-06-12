@@ -54,23 +54,33 @@ public class FileReader {
     }
 
     public void userSelectProduct(String slot) {
-        for(Items vendingItems : vendingMachineStock){
+        for (Items vendingItems : vendingMachineStock) {
             if (vendingItems.getSlot().equals(slot)) {
-                if (vendingItems.getStock() > 0)
-                System.out.println("Dispensing "  + slot);
-                vendingItems.setStock(vendingItems.getStock() - 1);
-                System.out.println("There are " + vendingItems.getStock() + " " + vendingItems.getName() + " left.");
-                System.out.println(vendingItems.getSound());
-                break;
-            } else if (vendingItems.getStock() == 0) {
-                System.out.println("This item is out of stock.");
+                if (vendingItems.getStock() > 0) {
+                    System.out.println("Dispensing " + slot);
+                    vendingItems.setStock(vendingItems.getStock() - 1);
+                    System.out.println("There are " + vendingItems.getStock() + " " + vendingItems.getName() + " left.");
+                    System.out.println(vendingItems.getSound());
+                    break;
+                } else if (vendingItems.getStock() == 0) {
+                    System.out.println("This item is out of stock.");
+                }
             }
         }
     }
+
     public double userProductPrice(String slot) {
         for(Items vendingItems : vendingMachineStock){
             if (vendingItems.getSlot().equals(slot)) {
                 return vendingItems.getPrice();
+            }
+        }
+        return 0;
+    }
+    public int getStockAgain(String slot) {
+        for (Items vendingItems : vendingMachineStock) {
+            if (vendingItems.getSlot().equals(slot)) {
+                return vendingItems.getStock();
             }
         }
         return 0;

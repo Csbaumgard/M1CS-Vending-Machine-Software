@@ -65,8 +65,12 @@ public class VendingMachineCLI {
 					System.out.println("Current Balance: $" + df.format(currentBalance));
 					balance.balanceClear();
 					System.out.println("Please insert valid bills (1's, 2's, 5's, 10's) ");
-					int nextBill = Integer.parseInt(userInput.nextLine());
-					balance.addMoney(nextBill);
+					try {
+						int nextBill = Integer.parseInt(userInput.nextLine());
+						balance.addMoney(nextBill);
+					} catch (Exception e) {
+						System.out.println("Oops... something went wrong.");
+					}
 					currentBalance += balance.getBalance();
 					System.out.println("Current Balance: $" + df.format(currentBalance));
 					break;
@@ -76,7 +80,7 @@ public class VendingMachineCLI {
 					System.out.println("Please enter item code for selection (Example: A1) ");
 					String slot = userInput.nextLine().toUpperCase();
 
-					if (currentBalance - fileReader.userProductPrice(slot) >= 0) {
+					if (currentBalance - fileReader.userProductPrice(slot) >= 0 && fileReader.getStockAgain(slot) > 0) {
 						fileReader.userSelectProduct(slot);
 						currentBalance -= fileReader.userProductPrice(slot);
 					} else {
@@ -92,6 +96,4 @@ public class VendingMachineCLI {
 			}
 		}
 	}
-
-
 }
