@@ -2,7 +2,6 @@ package com.techelevator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -56,9 +55,17 @@ public class FileReader {
             if (vendingItems.getSlot().equals(slot)) {
                 System.out.println("Dispensing "  + slot);
                 vendingItems.setStock(vendingItems.getStock() - 1);
-                System.out.println("There are this many left" + vendingItems.getStock());
+                System.out.println("There are " + vendingItems.getStock() + " " + vendingItems.getName() + " left.");
                 System.out.println(vendingItems.getSound());
             }
         }
+    }
+    public double userProductPrice(String slot) {
+        for(Items vendingItems : vendingMachineStock){
+            if (vendingItems.getSlot().equals(slot)) {
+                return vendingItems.getPrice();
+            }
+        }
+        return 0;
     }
 }
