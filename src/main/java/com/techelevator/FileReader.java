@@ -2,6 +2,7 @@ package com.techelevator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,6 +10,8 @@ import java.util.Scanner;
 public class FileReader {
 
     List<Items> vendingMachineStock = new ArrayList<>(); // where all objects are created
+
+    DecimalFormat df = new DecimalFormat("###.00");
 
 
 
@@ -42,7 +45,7 @@ public class FileReader {
 
         public void displayVendingItems(){
             for(Items vendingItems : vendingMachineStock){
-                System.out.println(vendingItems.getSlot() + " | " + vendingItems.getName() + " | " + vendingItems.getPrice() + " | " + vendingItems.getStock());
+                System.out.println(vendingItems.getSlot() + " | " + vendingItems.getName() + " | $" + df.format(vendingItems.getPrice()) + " | " + vendingItems.getStock());
             }
         }
 
@@ -53,10 +56,13 @@ public class FileReader {
     public void userSelectProduct(String slot) {
         for(Items vendingItems : vendingMachineStock){
             if (vendingItems.getSlot().equals(slot)) {
+                if (vendingItems.getStock() > 0)
                 System.out.println("Dispensing "  + slot);
                 vendingItems.setStock(vendingItems.getStock() - 1);
                 System.out.println("There are " + vendingItems.getStock() + " " + vendingItems.getName() + " left.");
                 System.out.println(vendingItems.getSound());
+            } else if (vendingItems.getStock() == 0) {
+                System.out.println("This item is out of stock.");
             }
         }
     }

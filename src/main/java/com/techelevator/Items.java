@@ -2,6 +2,7 @@ package com.techelevator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public abstract class Items {
@@ -9,8 +10,6 @@ public abstract class Items {
     private String slot;
     private double price;
     private int stock;
-
-
 
     public Items(String slot, String name, double price, int stock) {
         this.name = name;
@@ -56,10 +55,6 @@ public abstract class Items {
     public void setStock(int stock) {
         this.stock = stock;
     }
-//    public String getItemFromUserChoice (String userChoice) {
-//        return  getSlot();
-//    }
-
 }
 
 
