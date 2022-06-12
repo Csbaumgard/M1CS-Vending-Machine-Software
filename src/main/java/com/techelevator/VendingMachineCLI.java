@@ -28,6 +28,7 @@ public class VendingMachineCLI {
 	Scanner userInput = new Scanner(System.in);
 	File inputFile = new File("vendingmachine.csv");
 	FileReader fileReader = new FileReader();
+	private int currentBalance;
 
 
 	public VendingMachineCLI(Menu menu) {
@@ -59,12 +60,17 @@ public class VendingMachineCLI {
 			switch (choice) {
 				case PURCHASE_MENU_OPTION_FEED_MONEY:
 					Money balance = new Money();
-					balance.addMoney();
-					System.out.println(balance.getBalance());
+					System.out.println("Please insert valid bills (1's, 2's, 5's, 10's) ");
+					int nextBill = userInput.nextInt();
+					balance.addMoney(nextBill);
+					currentBalance += balance.getBalance();
+					System.out.println(" $" + currentBalance);
 					break;
 				case PURCHASE_MENU_OPTION_SELECT_PRODUCT:
-//					purchaseMenu.purchaseMenuSelectProduct(); run fileReader.displayVendingItems() again to  display,
-//                    new FileReader(inputFile);
+					fileReader.displayVendingItems(); //run fileReader.displayVendingItems() again to  display,
+					System.out.println("Please enter item code for selection (Example: A1)");
+					String slot = userInput.nextLine();
+					fileReader.userSelectProduct(slot);
 
 					break;
 				case PURCHASE_MENU_OPTION_FINISH_TRANSACTION:

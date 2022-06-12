@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class Items {
+public abstract class Items {
     private String name;
     private String slot;
     private double price;
@@ -17,10 +17,9 @@ public class Items {
         this.slot = slot;
         this.price = price;
         this.stock = stock;
-
-
     }
 
+    public abstract String getSound();
 
     public String getAll() {
         return getSlot() + ", " + getName() + " $" + getPrice() + " " +getStock();

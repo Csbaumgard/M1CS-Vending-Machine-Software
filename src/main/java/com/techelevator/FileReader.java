@@ -47,6 +47,18 @@ public class FileReader {
             }
         }
 
+    public List<Items> getVendingMachineStock() {
+        return vendingMachineStock;
+    }
 
-
+    public void userSelectProduct(String slot) {
+        for(Items vendingItems : vendingMachineStock){
+            if (vendingItems.getSlot().equals(slot)) {
+                System.out.println("Dispensing "  + slot);
+                vendingItems.setStock(vendingItems.getStock() - 1);
+                System.out.println("There are this many left" + vendingItems.getStock());
+                System.out.println(vendingItems.getSound());
+            }
+        }
+    }
 }
