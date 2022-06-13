@@ -50,7 +50,7 @@ public class Money {
                     } else if (balance >= 0.25) {
                         quarterCount += 1;
                         balance -= 0.25;
-                        System.out.println(quarterCount + " quarter");
+                        System.out.println(quarterCount + " quarters");
                     } else if (balance >= 0.20) {
                         dimeCount += 2;
                         balance -= 0.20;
@@ -58,13 +58,12 @@ public class Money {
                     } else if (balance >= 0.10) {
                         dimeCount += 1;
                         balance -= 0.10;
-                        System.out.println(dimeCount + " dime");
+                        System.out.println(dimeCount + " dimes");
                     } else if (balance >= 0.05) {
                         nickelCount += 1;
                         balance -= 0.05;
-                        System.out.println(nickelCount + " nickel");
+                        System.out.println(nickelCount + " nickels");
                     } else if (balance == 0) {
-                        System.out.println(quarterCount + " quarters");
                         break;
                     } else {
                     break;
