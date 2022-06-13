@@ -85,4 +85,14 @@ public class FileReader {
         }
         return 0;
     }
+
+    public String getItemName(String slot) {
+        for (Items vendingItems : vendingMachineStock) {
+            if (vendingItems.getSlot().equals(slot)) {
+                return vendingItems.getName();
+            }
+        }
+        return "";
+    }
+
 }

@@ -18,6 +18,10 @@ public abstract class Items {
         this.stock = stock;
     }
 
+    public Items() {
+
+    }
+
     public abstract String getSound();
 
     public String getAll() {

@@ -1,0 +1,18 @@
+06/12/2022 05:51 PMcom.techelevator.Money@327093935.0
+06/12/2022 06:22 PMA1
+06/12/2022 06:27 PM Potato CrispsA1
+06/12/2022 06:31 PM Potato Crisps A1 com.techelevator.Money@34cd072c 1.9500000000000002
+06/12/2022 06:32 PM Potato Crisps A1 5 1.9500000000000002
+06/12/2022 06:33 PM Potato Crisps A1 5.00 1.95
+06/12/2022 06:34 PM Potato Crisps A1 $5.00 $1.95
+06/12/2022 07:59 PM Feed Money null $10.00 $10.00
+06/12/2022 07:59 PM Feed Money null $1.00 $11.00
+06/12/2022 07:59 PM Triplemint D4 $1.00 $10.25
+06/12/2022 07:59 PM Potato Crisps A1 $1.00 $7.20
+06/12/2022 07:59 PM Feed Money A1 $1.00 $7.20
+06/12/2022 08:06 PM Feed Money null $2.00 $2.00
+06/12/2022 08:06 PM Chiclets D3 $2.00 $1.25
+06/12/2022 08:06 PM Feed Money D3 $1.00 $2.25
+06/12/2022 08:06 PM U-Chews D1 $1.00 $1.40
+06/12/2022 08:06 PM U-Chews D1 $1.00 $.55
+06/12/2022 08:06 PM Finish Transaction D1 $1.00 $.55
