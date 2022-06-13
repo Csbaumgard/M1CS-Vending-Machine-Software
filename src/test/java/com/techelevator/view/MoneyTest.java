@@ -1,8 +1,8 @@
-package com.techelevator.view;
-
-import org.junit.Test;
-
-public class MoneyTest {
-    @Test
-
-}
+//package com.techelevator.view;
+//
+//import org.junit.Test;
+//
+//public class MoneyTest {
+//    @Test
+//
+//}

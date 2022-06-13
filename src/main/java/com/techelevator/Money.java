@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Money {
     public int balance;
-    private Scanner userInput = new Scanner(System.in);
+
 
     public int getBalance() {
         return balance;
@@ -13,11 +13,6 @@ public class Money {
 
     public void setBalance(int balance) {
         this.balance = balance;
-    }
-
-    public String getBalanceInDollars(int givenBalance) {
-        DecimalFormat df = new DecimalFormat("###.00");
-        return "$" + df.format((double)givenBalance / 100);
     }
 
     public String addMoney(int amount) {
@@ -39,6 +34,9 @@ public class Money {
                 if (balance >= 1.0) {
                     quarterCount += 4;
                     balance -= 1.0;
+                    if (balance == 0) {
+                        System.out.println(quarterCount + " quarters");
+                    }
                 } else if (balance >= 0.75) {
                         quarterCount += 3;
                         balance -= 0.75;
@@ -71,17 +69,10 @@ public class Money {
                 }
             }
 
-
-
-
     public void balanceClear() {
         balance = 0;
     }
 }
 
-
-    // User selects option 2 to purchase
-    // Displays "Please insert cash (1's, 2's, 5's, 10's)" , also displays current value
-    // returns to purchase menu after user feeds money
 
 

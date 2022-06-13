@@ -10,11 +10,7 @@ import java.util.Scanner;
 public class FileReader {
 
     List<Items> vendingMachineStock = new ArrayList<>(); // where all objects are created
-
     DecimalFormat df = new DecimalFormat("###.00");
-
-
-
     File csv = new File("vendingmachine.csv");
 
     public void fileReader(){  // Successfully splits file and we cane use index  0, 1, 2, 3 to reference each class of product type
@@ -26,15 +22,13 @@ public class FileReader {
         }
 
             while (fileReader.hasNextLine()) {
-               // String splitByLine = fileScanner.nextLine();
                 String line = fileReader.nextLine(); // String Array
                 String[] productArray = line.split("\\|");
                 if (productArray[3].equals("Chip")) {
                     vendingMachineStock.add(new Chip(productArray[0], productArray[1], Double.parseDouble(productArray[2])));
                 } else if(productArray[3].equals("Candy")) {
                     vendingMachineStock.add(new Candy(productArray[0], productArray[1], Double.parseDouble(productArray[2])));
-                }
-                else if(productArray[3].equals("Gum")) {
+                } else if(productArray[3].equals("Gum")) {
                     vendingMachineStock.add(new Gum(productArray[0], productArray[1], Double.parseDouble(productArray[2])));
                 } else if(productArray[3].equals("Drink")) {
                     vendingMachineStock.add(new Drink(productArray[0], productArray[1], Double.parseDouble(productArray[2])));
@@ -48,10 +42,6 @@ public class FileReader {
                 System.out.println(vendingItems.getSlot() + " | " + vendingItems.getName() + " | $" + df.format(vendingItems.getPrice()) + " | " + vendingItems.getStock());
             }
         }
-
-    public List<Items> getVendingMachineStock() {
-        return vendingMachineStock;
-    }
 
     public void userSelectProduct(String slot) {
         for (Items vendingItems : vendingMachineStock) {
@@ -77,6 +67,7 @@ public class FileReader {
         }
         return 0;
     }
+
     public int getStockAgain(String slot) {
         for (Items vendingItems : vendingMachineStock) {
             if (vendingItems.getSlot().equals(slot)) {

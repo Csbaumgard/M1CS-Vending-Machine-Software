@@ -19,7 +19,6 @@ public abstract class Items {
     }
 
     public Items() {
-
     }
 
     public abstract String getSound();

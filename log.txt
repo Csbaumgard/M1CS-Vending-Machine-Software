@@ -16,3 +16,68 @@
 06/12/2022 08:06 PM U-Chews D1 $1.00 $1.40
 06/12/2022 08:06 PM U-Chews D1 $1.00 $.55
 06/12/2022 08:06 PM Finish Transaction D1 $1.00 $.55
+06/12/2022 08:38 PM Feed Money null $2.00 $2.00
+06/12/2022 08:38 PM Heavy C4 $2.00 $.50
+06/12/2022 08:38 PM Finish Transaction C4 $2.00 $.50
+06/12/2022 08:41 PM Mountain Melter C3 $.00 $.00
+06/12/2022 08:41 PM Feed Money C3 $5.00 $5.00
+06/12/2022 08:41 PM Mountain Melter C3 $5.00 $3.50
+06/12/2022 08:41 PM Finish Transaction C3 $5.00 $3.50
+06/12/2022 09:05 PM Feed Money null $2.00 $2.00
+06/12/2022 09:05 PM Cola C1 $2.00 $.75
+06/12/2022 09:05 PM Finish Transaction C1 $2.00 $.75
+06/12/2022 09:18 PM Feed Money null $5.00 $5.00
+06/12/2022 09:18 PM Finish Transaction null $5.00 $5.00
+06/12/2022 09:18 PM Heavy C4 $5.00 $.00
+06/12/2022 09:18 PM Feed Money C4 $5.00 $5.00
+06/12/2022 09:18 PM Heavy C4 $5.00 $3.50
+06/12/2022 09:18 PM Heavy C4 $5.00 $2.00
+06/12/2022 09:18 PM Finish Transaction C4 $5.00 $2.00
+06/12/2022 09:25 PM Feed Money null $5.00 $5.00
+06/12/2022 09:25 PM Finish Transaction null $5.00 $5.00
+06/12/2022 09:29 PM Feed Money null $5.00 $5.00
+06/12/2022 09:29 PM Feed Money null $1.00 $6.00
+06/12/2022 09:30 PM Feed Money null $5.00 $5.00
+06/12/2022 09:30 PM Feed Money null $1.00 $6.00
+06/12/2022 09:30 PM Triplemint D4 $1.00 $5.25
+06/12/2022 09:33 PM Feed Money null $5.00 $5.00
+06/12/2022 09:33 PM Triplemint D4 $5.00 $4.25
+06/12/2022 09:33 PM Triplemint D4 $5.00 $3.50
+06/12/2022 09:33 PM Triplemint D4 $5.00 $2.75
+06/12/2022 09:33 PM Triplemint D4 $5.00 $2.00
+06/12/2022 09:33 PM Triplemint D4 $5.00 $1.25
+06/12/2022 09:33 PM Triplemint D4 $5.00 $1.25
+06/12/2022 09:57 PM Feed Money null $5.00 $5.00
+06/12/2022 09:57 PM Triplemint D4 $5.00 $4.25
+06/12/2022 09:57 PM Triplemint D4 $5.00 $3.50
+06/12/2022 09:57 PM Triplemint D4 $5.00 $2.75
+06/12/2022 09:57 PM Triplemint D4 $5.00 $2.00
+06/12/2022 09:57 PM  S4 $5.00 $2.00
+06/12/2022 09:57 PM Triplemint D4 $5.00 $1.25
+06/12/2022 09:57 PM Triplemint D4 $5.00 $1.25
+06/12/2022 09:57 PM  AA $5.00 $1.25
+06/12/2022 10:00 PM Feed Money null $5.00 $5.00
+06/12/2022 10:00 PM  AA $5.00 $5.00
+06/12/2022 10:01 PM Feed Money null $5.00 $5.00
+06/12/2022 10:01 PM  AA $5.00 $5.00
+06/12/2022 10:01 PM Triplemint D4 $5.00 $4.25
+06/12/2022 10:01 PM Triplemint D4 $5.00 $3.50
+06/12/2022 10:01 PM Triplemint D4 $5.00 $2.75
+06/12/2022 10:01 PM Triplemint D4 $5.00 $2.00
+06/12/2022 10:01 PM Triplemint D4 $5.00 $1.25
+06/12/2022 10:01 PM Triplemint D4 $5.00 $1.25
+06/12/2022 10:04 PM Feed Money null $5.00 $5.00
+06/12/2022 10:04 PM  AA $5.00 $5.00
+06/12/2022 10:07 PM Feed Money null $5.00 $5.00
+06/12/2022 10:07 PM  AA $5.00 $5.00
+06/12/2022 10:09 PM Feed Money null $5.00 $5.00
+06/12/2022 10:09 PM  DD $5.00 $5.00
+06/12/2022 10:11 PM Feed Money null $5.00 $5.00
+06/12/2022 10:11 PM  SS $5.00 $5.00
+06/12/2022 10:11 PM Triplemint D4 $5.00 $4.25
+06/12/2022 10:11 PM Triplemint D4 $5.00 $3.50
+06/12/2022 10:11 PM Triplemint D4 $5.00 $2.75
+06/12/2022 10:11 PM Triplemint D4 $5.00 $2.00
+06/12/2022 10:11 PM Triplemint D4 $5.00 $1.25
+06/12/2022 10:11 PM Triplemint D4 $5.00 $1.25
+06/12/2022 10:11 PM Finish Transaction D4 $5.00 $1.25

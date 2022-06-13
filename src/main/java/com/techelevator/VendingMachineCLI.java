@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.Logger;
+
 
 public class VendingMachineCLI {
 
@@ -30,15 +30,22 @@ public class VendingMachineCLI {
 	private static final String PURCHASE_MENU_OPTION_FINISH_TRANSACTION = "Finish Transaction";
 	private static final String[] PURCHASE_MENU_OPTIONS = {PURCHASE_MENU_OPTION_FEED_MONEY, PURCHASE_MENU_OPTION_SELECT_PRODUCT, PURCHASE_MENU_OPTION_FINISH_TRANSACTION};
 
+	// Formatters
+
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm a");
 	String formattedDate = LocalDateTime.now().format(formatter);
-	private final Menu menu;
-	Scanner userInput = new Scanner(System.in);
-	File inputFile = new File("vendingmachine.csv");
-	FileReader fileReader = new FileReader();
-	public double currentBalance;
 	DecimalFormat df = new DecimalFormat("###.00");
+
+	// Classes
+
+	Scanner userInput = new Scanner(System.in);
+	FileReader fileReader = new FileReader();
 	Money balance = new Money();
+
+	// Variables
+
+	private final Menu menu;
+	public double currentBalance;
 	private String getUserSlot;
 
 
@@ -51,14 +58,13 @@ public class VendingMachineCLI {
 		try (PrintWriter dataOutput = new PrintWriter(new FileOutputStream("log.txt", true))) {
 			if (PURCHASE_MENU_OPTIONS.equals(PURCHASE_MENU_OPTION_FEED_MONEY))  {
 				getUserName = PURCHASE_MENU_OPTION_FEED_MONEY;
-				dataOutput.println(formattedDate + " "  + PURCHASE_MENU_OPTION_FEED_MONEY  + " $" + df.format(balance.getBalance()) + " $" + df.format(currentBalance));
+				dataOutput.println(formattedDate + " " + PURCHASE_MENU_OPTION_FEED_MONEY  + " $" + df.format(balance.getBalance()) + " $" + df.format(currentBalance));
 			}
 			if (PURCHASE_MENU_OPTIONS.equals(PURCHASE_MENU_OPTION_FINISH_TRANSACTION)) {
 				getUserName = PURCHASE_MENU_OPTION_FINISH_TRANSACTION;
-				dataOutput.println(formattedDate + " "  + PURCHASE_MENU_OPTION_FINISH_TRANSACTION + " $" + df.format(balance.getBalance()) + " $" + df.format(currentBalance));
-			}
-			else  {
-				dataOutput.println(formattedDate + " "  + getUserName + " " + getUserSlot + " $" + df.format(balance.getBalance()) + " $" + df.format(currentBalance)); //+ item  name + slot + money fed in + end balance);
+				dataOutput.println(formattedDate + " " + PURCHASE_MENU_OPTION_FINISH_TRANSACTION + " $" + df.format(balance.getBalance()) + " $" + df.format(currentBalance));
+			} else  {
+				dataOutput.println(formattedDate + " "  + getUserName + " " + getUserSlot + " $" + df.format(balance.getBalance()) + " $" + df.format(currentBalance));
 			}
 		} catch (FileNotFoundException e) {
 			System.err.println("Cannot open file for writing");
@@ -70,14 +76,15 @@ public class VendingMachineCLI {
 		fileReader.fileReader();
 		while (true) {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
-
 			switch (choice) {
 				case MAIN_MENU_OPTION_DISPLAY_ITEMS:
 					fileReader.displayVendingItems();
 					break;
 				case MAIN_MENU_OPTION_PURCHASE:
 					runPurchase();
+
 					break;
+
 				case MAIN_MENU_OPTION_EXIT:
 					System.exit(0);
 			}
@@ -95,16 +102,19 @@ public class VendingMachineCLI {
 					System.out.println("Current Balance: $" + df.format(currentBalance));
 					balance.balanceClear();
 					System.out.println("Please insert valid bills (1's, 2's, 5's, 10's) ");
+
 					try {
 						int nextBill = Integer.parseInt(userInput.nextLine());
 						balance.addMoney(nextBill);
 					} catch (Exception e) {
 						System.out.println("Oops... something went wrong.");
 					}
+
 					currentBalance += balance.getBalance();
 					System.out.println("Current Balance: $" + df.format(currentBalance));
 					writeToLog(getUserSlot, feedMoney);
 					break;
+
 				case PURCHASE_MENU_OPTION_SELECT_PRODUCT:
 					fileReader.displayVendingItems(); //run fileReader.displayVendingItems() again to  display,
 					System.out.println("Current Balance: $" + df.format(currentBalance));
@@ -115,13 +125,17 @@ public class VendingMachineCLI {
 					if (currentBalance - fileReader.userProductPrice(slot) >= 0 && fileReader.getStockAgain(slot) > 0) {
 						fileReader.userSelectProduct(slot);
 						currentBalance -= fileReader.userProductPrice(slot);
-					} else {
-						System.out.println("Insufficient funds.");
+					} else if (fileReader.vendingMachineStock == null) {
+						System.out.println("This Selection Does Not Exist Or Is Out Of Stock");
+					} else if (fileReader.getStockAgain(slot) == 0){
+						System.out.println("This Selection Does Not Exist Or Is Out Of Stock");
+					} else if (currentBalance < fileReader.userProductPrice(slot)) {
+						System.out.println("Insufficient Funds");
 					}
 					System.out.println("Current Balance: $" + df.format(currentBalance));
-
 					writeToLog(getUserSlot, fileReader.getItemName(slot));
 					break;
+
 				case PURCHASE_MENU_OPTION_FINISH_TRANSACTION:
 					String finishTransaction = PURCHASE_MENU_OPTION_FINISH_TRANSACTION;
 					System.out.println("Dispensing Change...");
