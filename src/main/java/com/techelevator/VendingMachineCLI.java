@@ -121,8 +121,7 @@ public class VendingMachineCLI {
 					System.out.println("Please enter item code for selection (Example: A1) ");
 					String slot = userInput.nextLine().toUpperCase();
 					getUserSlot = slot;
-
-					if (currentBalance - fileReader.userProductPrice(slot) >= 0 && fileReader.getStockAgain(slot) > 0) {
+					if (currentBalance - fileReader.userProductPrice(slot) >= 0) {
 						fileReader.userSelectProduct(slot);
 						currentBalance -= fileReader.userProductPrice(slot);
 					} else if (fileReader.vendingMachineStock == null) {
@@ -132,6 +131,7 @@ public class VendingMachineCLI {
 					} else if (currentBalance < fileReader.userProductPrice(slot)) {
 						System.out.println("Insufficient Funds");
 					}
+
 					System.out.println("Current Balance: $" + df.format(currentBalance));
 					writeToLog(getUserSlot, fileReader.getItemName(slot));
 					break;

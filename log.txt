@@ -16,6 +16,7 @@
 06/12/2022 08:06 PM U-Chews D1 $1.00 $1.40
 06/12/2022 08:06 PM U-Chews D1 $1.00 $.55
 06/12/2022 08:06 PM Finish Transaction D1 $1.00 $.55
+<<<<<<< Updated upstream
 06/12/2022 08:38 PM Feed Money null $2.00 $2.00
 06/12/2022 08:38 PM Heavy C4 $2.00 $.50
 06/12/2022 08:38 PM Finish Transaction C4 $2.00 $.50
@@ -81,3 +82,61 @@
 06/12/2022 10:11 PM Triplemint D4 $5.00 $1.25
 06/12/2022 10:11 PM Triplemint D4 $5.00 $1.25
 06/12/2022 10:11 PM Finish Transaction D4 $5.00 $1.25
+=======
+06/12/2022 09:08 PM Feed Money null $10.00 $10.00
+06/12/2022 09:08 PM Triplemint D4 $10.00 $9.25
+06/12/2022 09:08 PM Finish Transaction D4 $10.00 $9.25
+06/12/2022 09:15 PM Feed Money null $.00 $.00
+06/12/2022 09:15 PM Feed Money null $.00 $.00
+06/12/2022 09:15 PM Feed Money null $.00 $.00
+06/12/2022 09:15 PM  AA $.00 $.00
+06/12/2022 09:15 PM   $.00 $.00
+06/12/2022 09:15 PM  D1, D2 $.00 $.00
+06/12/2022 09:15 PM Feed Money D1, D2 $10.00 $10.00
+06/12/2022 09:15 PM  -1 $10.00 $10.00
+06/12/2022 09:15 PM  D1, D2 $10.00 $10.00
+06/12/2022 09:15 PM    $10.00 $10.00
+06/12/2022 09:15 PM   $10.00 $10.00
+06/12/2022 09:15 PM Finish Transaction  $10.00 $10.00
+06/12/2022 09:15 PM Feed Money  $10.00 $10.00
+06/12/2022 09:15 PM Finish Transaction  $10.00 $10.00
+06/12/2022 09:22 PM Feed Money null $10.00 $10.00
+06/12/2022 09:22 PM Finish Transaction null $10.00 $10.00
+06/12/2022 09:22 PM   $10.00 $.00
+06/12/2022 09:22 PM Feed Money  $10.00 $10.00
+06/12/2022 09:22 PM Potato Crisps A1 $10.00 $6.95
+06/12/2022 09:22 PM Finish Transaction A1 $10.00 $6.95
+06/12/2022 09:41 PM  AA $.00 $.00
+06/12/2022 09:41 PM Feed Money AA $10.00 $10.00
+06/12/2022 09:41 PM Feed Money AA $10.00 $20.00
+06/12/2022 09:41 PM Potato Crisps A1 $10.00 $16.95
+06/12/2022 09:41 PM Potato Crisps A1 $10.00 $13.90
+06/12/2022 09:41 PM Potato Crisps A1 $10.00 $10.85
+06/12/2022 09:41 PM Potato Crisps A1 $10.00 $7.80
+06/12/2022 09:41 PM Potato Crisps A1 $10.00 $4.75
+06/12/2022 09:41 PM Potato Crisps A1 $10.00 $4.75
+06/12/2022 09:47 PM Feed Money null $10.00 $10.00
+06/12/2022 09:47 PM Triplemint D4 $10.00 $9.25
+06/12/2022 09:47 PM Triplemint D4 $10.00 $8.50
+06/12/2022 09:47 PM Triplemint D4 $10.00 $7.75
+06/12/2022 09:47 PM Triplemint D4 $10.00 $7.00
+06/12/2022 09:47 PM Triplemint D4 $10.00 $6.25
+06/12/2022 09:47 PM Triplemint D4 $10.00 $5.50
+06/12/2022 09:48 PM Feed Money null $10.00 $10.00
+06/12/2022 09:48 PM Feed Money null $10.00 $20.00
+06/12/2022 09:48 PM Potato Crisps A1 $10.00 $16.95
+06/12/2022 09:48 PM Potato Crisps A1 $10.00 $13.90
+06/12/2022 09:48 PM Potato Crisps A1 $10.00 $10.85
+06/12/2022 09:48 PM Potato Crisps A1 $10.00 $7.80
+06/12/2022 09:48 PM Potato Crisps A1 $10.00 $4.75
+06/12/2022 09:48 PM Potato Crisps A1 $10.00 $1.70
+06/12/2022 09:49 PM Feed Money null $10.00 $10.00
+06/12/2022 09:49 PM Triplemint D4 $10.00 $9.25
+06/12/2022 09:49 PM Triplemint D4 $10.00 $8.50
+06/12/2022 09:49 PM Triplemint D4 $10.00 $7.75
+06/12/2022 09:49 PM Triplemint D4 $10.00 $7.00
+06/12/2022 09:49 PM Triplemint D4 $10.00 $6.25
+>>>>>>> Stashed changes
+06/12/2022 10:18 PM Feed Money null $10.00 $10.00
+06/12/2022 10:18 PM Potato Crisps A1 $10.00 $6.95
+06/12/2022 10:18 PM Finish Transaction A1 $10.00 $6.95

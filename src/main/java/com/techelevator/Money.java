@@ -21,7 +21,7 @@ public class Money {
                 balance += amount;
                 return amount + " was accepted.";
             } else {
-                return amount + " is not a valid amount";
+                return amount + " is not a valid amount.";
             }
         }
 
